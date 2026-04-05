@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Flash Chat-->
         <scene sceneID="alv-Lu-E9R">
             <objects>
                 <tableViewController id="oQD-8s-lKQ" sceneMemberID="viewController">
@@ -31,11 +31,11 @@
                             <outlet property="delegate" destination="oQD-8s-lKQ" id="OXd-kc-eZ2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="xFl-qF-MVV"/>
+                    <navigationItem key="navigationItem" title="Flash Chat" id="xFl-qF-MVV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOd-tO-Lge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2172" y="-47"/>
+            <point key="canvasLocation" x="2156" y="-21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dI2-lb-F5e">
@@ -62,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="whatsapp-chat-doodle-patterns-jyd5uvep2fdwjl97" translatesAutoresizingMaskIntoConstraints="NO" id="Fi9-2Y-ecb">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="fondoVerder" translatesAutoresizingMaskIntoConstraints="NO" id="Fi9-2Y-ecb">
                                 <rect key="frame" x="-204" y="-406" width="800" height="1664"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -76,7 +76,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Register">
-                                            <color key="baseBackgroundColor" red="0.1461775005" green="0.63697236779999999" blue="0.30517080429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="baseBackgroundColor" red="0.313772738" green="0.62411165239999999" blue="0.3403107226" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L9-R4-o6i">
@@ -124,14 +124,99 @@
                     <view key="view" contentMode="scaleToFill" id="8oc-ej-3Oy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poA-Nx-S6m" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="162" width="393" height="253.66666666666663"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circulo" translatesAutoresizingMaskIntoConstraints="NO" id="eBj-sU-tt7">
+                                        <rect key="frame" x="84" y="-13" width="225" height="280"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="225" id="GOc-pE-BcQ"/>
+                                            <constraint firstAttribute="height" constant="280" id="XhT-6h-XBf"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eBj-sU-tt7" firstAttribute="centerX" secondItem="poA-Nx-S6m" secondAttribute="centerX" id="HPS-Pu-zWU"/>
+                                    <constraint firstItem="eBj-sU-tt7" firstAttribute="centerY" secondItem="poA-Nx-S6m" secondAttribute="centerY" id="cFb-6z-2A4"/>
+                                    <constraint firstItem="eBj-sU-tt7" firstAttribute="centerX" secondItem="poA-Nx-S6m" secondAttribute="centerX" id="cWj-Hz-w1R"/>
+                                    <constraint firstItem="eBj-sU-tt7" firstAttribute="centerY" secondItem="poA-Nx-S6m" secondAttribute="centerY" id="hAd-aU-BhN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQo-tH-EKB" userLabel="Center View">
+                                <rect key="frame" x="0.0" y="415.66666666666669" width="393" height="20.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to WhatsChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qD-2R-QFW">
+                                        <rect key="frame" x="94" y="-0.66666666666674246" width="208" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSg-8F-Rgn" userLabel="Buttom View">
+                                <rect key="frame" x="0.0" y="436.33333333333326" width="393" height="347.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ctP-1r-alh">
+                                        <rect key="frame" x="0.0" y="116.66666666666669" width="393" height="114.33333333333331"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-KF-KmW" userLabel="Email">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="31o-h3-oV5" userLabel="Password">
+                                                <rect key="frame" x="0.0" y="40" width="393" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oiv-Wj-f5v" userLabel="Register">
+                                                <rect key="frame" x="0.0" y="80" width="393" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Register">
+                                                    <color key="baseBackgroundColor" red="0.1461775005" green="0.63697236779999999" blue="0.30517080429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ctP-1r-alh" firstAttribute="leading" secondItem="QSg-8F-Rgn" secondAttribute="leading" id="LnV-IG-td6"/>
+                                    <constraint firstAttribute="trailing" secondItem="ctP-1r-alh" secondAttribute="trailing" id="aGz-ai-ORk"/>
+                                    <constraint firstItem="ctP-1r-alh" firstAttribute="centerY" secondItem="QSg-8F-Rgn" secondAttribute="centerY" id="k9F-Rr-QaA"/>
+                                    <constraint firstItem="ctP-1r-alh" firstAttribute="centerX" secondItem="QSg-8F-Rgn" secondAttribute="centerX" id="vqa-z6-Ec7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cMk-qY-KfL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VQo-tH-EKB" firstAttribute="top" secondItem="8oc-ej-3Oy" secondAttribute="top" constant="415.66666666666669" id="4mn-Nx-nrY"/>
+                            <constraint firstItem="VQo-tH-EKB" firstAttribute="top" secondItem="poA-Nx-S6m" secondAttribute="bottom" id="7rP-WB-0ck"/>
+                            <constraint firstItem="QSg-8F-Rgn" firstAttribute="top" secondItem="VQo-tH-EKB" secondAttribute="bottom" id="ClV-kL-em8"/>
+                            <constraint firstItem="cMk-qY-KfL" firstAttribute="trailing" secondItem="QSg-8F-Rgn" secondAttribute="trailing" id="GIt-1W-smC"/>
+                            <constraint firstItem="poA-Nx-S6m" firstAttribute="trailing" secondItem="cMk-qY-KfL" secondAttribute="trailing" id="TJE-J4-fZL"/>
+                            <constraint firstItem="poA-Nx-S6m" firstAttribute="leading" secondItem="cMk-qY-KfL" secondAttribute="leading" id="Vqg-9M-Ima"/>
+                            <constraint firstItem="poA-Nx-S6m" firstAttribute="leading" secondItem="cMk-qY-KfL" secondAttribute="leading" id="amh-AQ-5Le"/>
+                            <constraint firstItem="QSg-8F-Rgn" firstAttribute="leading" secondItem="cMk-qY-KfL" secondAttribute="leading" id="epj-cP-Cyf"/>
+                            <constraint firstItem="VQo-tH-EKB" firstAttribute="leading" secondItem="poA-Nx-S6m" secondAttribute="leading" id="h1V-UN-Kg6"/>
+                            <constraint firstItem="cMk-qY-KfL" firstAttribute="trailing" secondItem="poA-Nx-S6m" secondAttribute="trailing" id="mYI-ug-5Ib"/>
+                            <constraint firstItem="VQo-tH-EKB" firstAttribute="trailing" secondItem="poA-Nx-S6m" secondAttribute="trailing" id="nab-wy-w2Z"/>
+                            <constraint firstItem="VQo-tH-EKB" firstAttribute="centerY" secondItem="8oc-ej-3Oy" secondAttribute="centerY" id="q4s-a3-WsW"/>
+                            <constraint firstItem="poA-Nx-S6m" firstAttribute="top" secondItem="cMk-qY-KfL" secondAttribute="top" id="s5r-Vv-JKu"/>
+                            <constraint firstItem="cMk-qY-KfL" firstAttribute="bottom" secondItem="QSg-8F-Rgn" secondAttribute="bottom" id="w5Z-xf-0Z3"/>
+                            <constraint firstItem="VQo-tH-EKB" firstAttribute="centerX" secondItem="QSg-8F-Rgn" secondAttribute="centerX" id="yuf-ZT-WBx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="N5U-r2-apZ"/>
+                    <connections>
+                        <segue destination="oQD-8s-lKQ" kind="show" id="ovK-s3-NZE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vc7-86-WcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="427"/>
+            <point key="canvasLocation" x="1363" y="685"/>
         </scene>
         <!--Log In-->
         <scene sceneID="p1p-8x-sbe">
@@ -160,8 +245,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oda-6n-2pP" userLabel="Center View">
                                 <rect key="frame" x="0.0" y="404.66666666666669" width="393" height="43"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to WhatsChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR5-WW-hUm">
-                                        <rect key="frame" x="93.000000000000014" y="11" width="207.33333333333337" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back to WhatsChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR5-WW-hUm">
+                                        <rect key="frame" x="69.333333333333329" y="11" width="254.66666666666669" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="A42-b2-T8s"/>
                                         </constraints>
@@ -229,15 +314,21 @@
                             <constraint firstItem="sRf-he-oxU" firstAttribute="leading" secondItem="Q0W-eq-8aa" secondAttribute="leading" id="rzv-GT-Nwd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="oQD-8s-lKQ" kind="show" id="fk6-rz-aSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ai1-HK-Su8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="-812"/>
+            <point key="canvasLocation" x="1363" y="-763"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4WK-We-l6v"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="circulo" width="384" height="391"/>
-        <image name="whatsapp-chat-doodle-patterns-jyd5uvep2fdwjl97" width="800" height="1664"/>
+        <image name="fondoVerder" width="550" height="999"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
