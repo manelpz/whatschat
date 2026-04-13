@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5d2-qf-2Pe">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,7 +29,7 @@
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="ViewController" customModule="whatschat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="WelcomeViewController" customModule="whatschat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,6 +50,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Register">
                                             <color key="baseBackgroundColor" red="0.313772738" green="0.62411165239999999" blue="0.3403107226" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="registerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpL-wj-F3z"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L9-R4-o6i">
                                         <rect key="frame" x="0.0" y="56" width="393" height="50"/>
@@ -60,6 +64,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Log in">
                                             <color key="baseBackgroundColor" red="0.1869165897" green="0.3586015105" blue="0.44051763420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="NfT-Tg-uup" kind="show" identifier="goToLogin" id="7dd-sD-S9Z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -80,8 +87,8 @@
                         <barButtonItem key="backBarButtonItem" title="Welcome" id="RZI-7F-biM"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="Zjt-yk-Fla" kind="show" id="cfY-tW-t0n"/>
-                        <segue destination="kLe-ap-RWM" kind="show" id="ATx-Lg-Y04"/>
+                        <segue destination="Zjt-yk-Fla" kind="show" identifier="goToRegistration" id="cfY-tW-t0n"/>
+                        <segue destination="kLe-ap-RWM" kind="show" identifier="goToChat" id="ATx-Lg-Y04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -91,7 +98,7 @@
         <!--Register-->
         <scene sceneID="lKk-gF-Owj">
             <objects>
-                <viewController id="Zjt-yk-Fla" userLabel="Register" sceneMemberID="viewController">
+                <viewController id="Zjt-yk-Fla" userLabel="Register" customClass="RegisterViewController" customModule="whatschat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8oc-ej-3Oy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,14 +124,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQo-tH-EKB" userLabel="Center View">
                                 <rect key="frame" x="0.0" y="415.66666666666669" width="393" height="20.666666666666686"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to WhatsChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qD-2R-QFW">
-                                        <rect key="frame" x="94" y="-0.66666666666674246" width="208" height="23"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to WhatsChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qD-2R-QFW">
+                                        <rect key="frame" x="94.000000000000014" y="-0.66666666666668561" width="207.33333333333337" height="22"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="7qD-2R-QFW" firstAttribute="centerY" secondItem="VQo-tH-EKB" secondAttribute="centerY" id="DK0-SU-BeU"/>
+                                    <constraint firstAttribute="trailing" secondItem="7qD-2R-QFW" secondAttribute="trailing" constant="91.666666666666629" id="G0f-hD-9Du"/>
+                                    <constraint firstItem="7qD-2R-QFW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VQo-tH-EKB" secondAttribute="leading" constant="20" symbolic="YES" id="rAc-5D-sea"/>
+                                    <constraint firstItem="7qD-2R-QFW" firstAttribute="top" secondItem="VQo-tH-EKB" secondAttribute="top" constant="-0.66666666666674246" id="wV1-ej-Ktk"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSg-8F-Rgn" userLabel="Buttom View">
                                 <rect key="frame" x="0.0" y="436.33333333333326" width="393" height="347.66666666666674"/>
@@ -148,6 +160,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Register">
                                                     <color key="baseBackgroundColor" red="0.1461775005" green="0.63697236779999999" blue="0.30517080429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="registerPressed:" destination="Zjt-yk-Fla" eventType="touchUpInside" id="A5i-D7-XYA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -182,17 +197,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="N5U-r2-apZ"/>
                     <connections>
-                        <segue destination="kLe-ap-RWM" kind="show" id="fql-E6-49o"/>
+                        <outlet property="emailTextfield" destination="VQk-KF-KmW" id="lYc-XN-dfB"/>
+                        <outlet property="passwordTextfield" destination="31o-h3-oV5" id="REi-OH-5p7"/>
+                        <segue destination="kLe-ap-RWM" kind="show" identifier="goToChat" id="fql-E6-49o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vc7-86-WcS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1363" y="685"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="mo8-wj-vIy">
             <objects>
-                <viewController id="kLe-ap-RWM" sceneMemberID="viewController">
+                <viewController id="kLe-ap-RWM" customClass="ChatViewController" customModule="whatschat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5gk-8e-mw4" userLabel="Background">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,6 +254,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="kLe-ap-RWM" eventType="touchUpInside" id="u5c-8F-GZ8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -255,7 +275,11 @@
                                 <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                                 <items>
                                     <navigationItem title="Chat" id="jJd-1H-Rls">
-                                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="FCX-ou-a0B"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="FCX-ou-a0B">
+                                            <connections>
+                                                <action selector="logOutPressed:" destination="kLe-ap-RWM" id="Nne-mr-b57"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -275,6 +299,12 @@
                             <constraint firstItem="MTQ-3I-FS5" firstAttribute="trailing" secondItem="T8L-U9-ctS" secondAttribute="trailing" id="rY2-mS-7fw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nQf-nc-dec"/>
+                    <connections>
+                        <outlet property="messageTableView" destination="Gzb-cd-lZ9" id="ilC-i1-233"/>
+                        <outlet property="messageTextfield" destination="Czd-RZ-dRo" id="rem-Vj-nsj"/>
+                        <outlet property="sendButton" destination="Q13-ZD-7eH" id="Cmd-8V-BqK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9js-w1-ziV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,16 +313,16 @@
         <!--Log In-->
         <scene sceneID="p1p-8x-sbe">
             <objects>
-                <viewController id="NfT-Tg-uup" userLabel="Log In" sceneMemberID="viewController">
+                <viewController id="NfT-Tg-uup" userLabel="Log In" customClass="LogInViewController" customModule="whatschat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hBw-6r-Ex4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRf-he-oxU" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="118.00000000000003" width="393" height="286.66666666666674"/>
+                                <rect key="frame" x="0.0" y="162" width="393" height="242.66666666666663"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circulo" translatesAutoresizingMaskIntoConstraints="NO" id="RH3-AD-Zp1">
-                                        <rect key="frame" x="81.666666666666686" y="1.6666666666666856" width="230" height="283"/>
+                                        <rect key="frame" x="81.666666666666686" y="-20.333333333333343" width="230" height="283"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="283" id="VRS-0m-Pl3"/>
                                             <constraint firstAttribute="width" constant="230" id="pfo-2u-4Au"/>
@@ -345,6 +375,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Log In">
                                                     <color key="baseBackgroundColor" red="0.1461775005" green="0.63697236779999999" blue="0.30517080429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="loginInPressed:" destination="NfT-Tg-uup" eventType="touchUpInside" id="ySX-Sw-83I"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -376,8 +409,11 @@
                             <constraint firstItem="sRf-he-oxU" firstAttribute="leading" secondItem="Q0W-eq-8aa" secondAttribute="leading" id="rzv-GT-Nwd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="O3A-3Z-8Lx"/>
                     <connections>
-                        <segue destination="kLe-ap-RWM" kind="show" id="Bf5-hw-K2X"/>
+                        <outlet property="emailTextfield" destination="y9I-Cg-KxW" id="tnN-S6-Xg5"/>
+                        <outlet property="passwordTextfield" destination="jmI-QM-9qT" id="Guc-ID-EAM"/>
+                        <segue destination="kLe-ap-RWM" kind="show" identifier="goToChat" id="Bf5-hw-K2X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ai1-HK-Su8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -386,7 +422,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fql-E6-49o"/>
+        <segue reference="Bf5-hw-K2X"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circulo" width="384" height="391"/>
